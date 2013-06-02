@@ -8,35 +8,45 @@ $(function() {
 			var 	founderLastName = array[i].lastName,
 				founderId = array[i].id;  //need to figure out how to set this
 
-			var node = Creatable.create(["option", founderLastName, {value: founderLastName}]);
-			console.log(node);
+			var node = Creatable.create(["option", {value: founderId}, founderLastName]);
+
+
 			// document.body.select.appendChild(node)
 			$("select").append(node);
 		}
     	}
+    	function findByChosenID (array, chosenId) {
+    		//var chosenID = parseInt(chosenID, 10);
+		for (i=0; i < array.length; i++) {
+			 if (array[i].id === parseInt(chosenId, 10)) {
+			 	console.log(array[i]);
+			 	return array[i];
+			 }
+		}
+
+		return null;
+	}
     	addNewOptions(founders);
-    });
-	 
+	 $('.founders').change(function() {
+	  	var chosenId = $(".founders>option:selected").val(); 
+	  	var selectedFounder = findByChosenID (founders, chosenId);
+	  	if (selectedFounder) {
+		  	$('.firstName').text(selectedFounder.lastName);
+		  	$('.lastName').text(selectedFounder.firstName);
+		  	$('.age').text(selectedFounder.age);  
+	  	}
+	  	else {
+	  		$('.firstName').text("");
+	  		$('.lastName').text("");
+	  		$('.age').text("");  
+	  	} 	
+	});
 	
+});
+
+
+
 			
  
-/*founders.forEach(function(id, lastName) {
-	var newOption = Creatable.create(["a", { href: "http://google.com" }, "Google"]);
-	$("select").select.append(newOption);
-	console.log('the last name is {a}'.supplant({a: id}));
-	$('select').append("<option value = {a} > {b} </>option>".supplant({a: id, b: lastName}));
-	})*/
 
-
-/*String.prototype.supplant = function (o) {
-	    return this.replace(/{([^{}]*)}/g,
-	        function (a, b) {
-	            var r = o[b];
-	            return typeof r === 'string' || typeof r === 'number' ? r : a;*/
-
-
-
-// Usage:
-/*alert("I'm {age} years old!".supplant({ age: 29 }));
-alert("The {a} says {n}, {n}, {n}!".supplant({ a: 'cow', n: 'moo' }));*/
 

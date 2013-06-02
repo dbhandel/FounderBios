@@ -93,7 +93,30 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+.main {
+    margin-right: 30%;
+    margin-left: 30%;
+    margin-top: 10%;
+    border: solid black 4px;
+    background-color: rgb(165, 219, 245);
+    padding-left: 30px;
+    font-size: 36px;
+}
 
+p {
+    padding-right: 15px;
+}
+
+dd {
+    font-size: 60px;
+    font-weight: bold;
+    color: blue;
+}
+
+dt {
+    font-size: 40px;
+
+}
 
 
 
