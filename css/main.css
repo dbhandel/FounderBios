@@ -98,7 +98,7 @@ textarea {
     margin-left: 30%;
     margin-top: 10%;
     border: solid black 4px;
-    background-color: rgb(165, 219, 245);
+    background-color: rgb(232, 217, 255);
     padding-left: 30px;
     font-size: 36px;
 }
@@ -106,17 +106,33 @@ textarea {
 p {
     padding-right: 15px;
 }
+.modal {
+    position: absolute;
+    width: 440px;
+    height: 290px;
+    background-color: rgb(217, 250, 255);
+    left: 20%;
+    top: 20%;
+    font-size: 24px;
+    padding-left: 20px;
+    border: solid black 3px;
 
-dd {
-    font-size: 60px;
-    font-weight: bold;
-    color: blue;
+}
+.close {
+    font-size: 36px;
+    color: red;
+    width: 60px;
+    position: absolute;
+    left: 90%;
+}
+.showModal {
+    font-size: 30px;
+    color: green;
+    position: absolute;
+    left: 50%;
+    top: 5%;
 }
 
-dt {
-    font-size: 40px;
-
-}
 
 
 
