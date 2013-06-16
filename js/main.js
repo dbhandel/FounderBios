@@ -49,13 +49,15 @@ $(function() {
 		// $('.modal').attr("hidden", "true");
 		$('.modal').toggle();
 		$(".page").css({ opacity: 1.0 });
-		$(".showmodal").attr('disabled', false);
+		$(".showModal").removeAttr('disabled');
 	})
+
+	//How can I disable/enable the showModal button?
 	$(".showModal").click(function() {
 		$('.modal').toggle();
 		$close.attr("disabled");
 		$(".page").css({ opacity: 0.3 });
-		$(".showmodal").attr('disabled', true);
+		$(".showModal").attr('disabled', 'disabled');
 	})
 });
 
